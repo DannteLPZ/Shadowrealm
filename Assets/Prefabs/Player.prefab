@@ -456,7 +456,6 @@ MonoBehaviour:
   _maxXSpeed: 2
   _groundDecay: 0.9
   _airControlFactor: 0.2
-  _dashMultiplier: 1.5
   _dashDuration: 0.5
   _dashCooldown: 1
   _jumpSpeed: 4
@@ -605,7 +604,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e7c02e38ae6924796273878d1cbf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateAnimation: {fileID: 7400000, guid: a4fb6ff415dda1c4981b7f8cc04e6e87, type: 2}
+  _dashMultiplier: 2
+  _playerRenderer: {fileID: 2843858410353522645}
+  _playerCollider: {fileID: 2843858410175276549}
+  _dashParticles: {fileID: 2177208393420803117, guid: 7859c04866cb28f49a2a6ba60d350148, type: 3}
 --- !u!1 &2843858411833294266
 GameObject:
   m_ObjectHideFlags: 0

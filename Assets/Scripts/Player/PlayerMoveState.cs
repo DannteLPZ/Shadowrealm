@@ -14,8 +14,6 @@ public class PlayerMoveState : State
     [SerializeField] private float _airControlFactor;
 
     [Header("Dashing")]
-    [Range(1.0f, 2.0f)]
-    [SerializeField] private float _dashMultiplier;
     [SerializeField] private float _dashDuration;
     [SerializeField] private float _dashCooldown;
 
@@ -85,11 +83,11 @@ public class PlayerMoveState : State
 
     private void SelectState()
     {
-        if (_core.GroundSensor.IsGrounded == true)
+        if (_hasDashed == true && _dashTimer <= _dashDuration)
+            _stateMachine.Set(_dashState);
+        else if (_core.GroundSensor.IsGrounded == true)
         {
-            if (_hasDashed == true && _dashTimer <= _dashDuration)
-                _stateMachine.Set(_dashState);
-            else if (_xInput == 0)
+            if (_xInput == 0)
                 _stateMachine.Set(_idleState);
             else
                 _stateMachine.Set(_runState);
@@ -127,7 +125,9 @@ public class PlayerMoveState : State
 
     private void MoveWithInput()
     {
-        if (Mathf.Abs(_xInput) > 0.0f)
+        if (_hasDashed == true && _dashTimer <= _dashDuration) return;
+
+            if (Mathf.Abs(_xInput) > 0.0f)
         {
             float increment;
 
@@ -138,17 +138,7 @@ public class PlayerMoveState : State
 
             float newSpeed = _core.Rigidbody.velocity.x + increment;
 
-            if (_hasDashed == true)
-            {
-                if (_core.GroundSensor.IsGrounded == false)
-                    newSpeed = Mathf.Clamp(newSpeed, -_maxXSpeed * _dashMultiplier, _maxXSpeed * _dashMultiplier);
-                else if (_dashTimer <= _dashDuration)
-                    newSpeed = Mathf.Clamp(newSpeed, -_maxXSpeed * _dashMultiplier, _maxXSpeed * _dashMultiplier);
-                else
-                    newSpeed = Mathf.Clamp(newSpeed, -_maxXSpeed, _maxXSpeed);
-            }
-            else
-                newSpeed = Mathf.Clamp(newSpeed, -_maxXSpeed, _maxXSpeed);
+            newSpeed = Mathf.Clamp(newSpeed, -_maxXSpeed, _maxXSpeed);
             _core.Rigidbody.velocity = new Vector2(newSpeed, _core.Rigidbody.velocity.y);
 
             float direction = 90.0f * Mathf.Sign(_xInput) - 90.0f;
@@ -159,7 +149,7 @@ public class PlayerMoveState : State
     private void CheckInput()
     {
         _xInput = _playerCore.PlayerInputs.Gameplay.Movement.ReadValue<float>();
-        _canDash = _core.GroundSensor.IsGrounded == true && _hasDashed == false && Mathf.Abs(_xInput) != 0.0f;
+        _canDash = _hasDashed == false && Mathf.Abs(_xInput) != 0.0f;
     }
 
     private void InputJump(InputAction.CallbackContext context) => _hasJumped = true;
