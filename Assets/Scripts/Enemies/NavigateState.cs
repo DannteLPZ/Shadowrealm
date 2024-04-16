@@ -30,12 +30,6 @@ public class NavigateState : State
     {
         if (_foundObstacle == true)
             _isComplete = true;
-
-        /*if(_target != null)
-        {
-            float direction = 90.0f * Mathf.Sign(_core.Rigidbody.velocity.x) - 90.0f;
-            _core.transform.rotation = Quaternion.Euler(0.0f, direction, 0.0f);
-        }*/
     }
     public override void FixedDo()
     {
