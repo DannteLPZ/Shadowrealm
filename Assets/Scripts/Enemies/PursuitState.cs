@@ -11,15 +11,19 @@ public class PursuitState : State
     [SerializeField] private SearchState _searchState;
     [SerializeField] private IdleState _idleState;
     [SerializeField] private AttackState _rangedAttack;
+    [SerializeField] private AttackState _slashAttack;
 
     [Header("Values")]
     [SerializeField] private LayerMask _playerMask;
+    [SerializeField] private LayerMask _notEnemyMask;
     [SerializeField] private float _circleRadius;
     [SerializeField] private float _castDistance;
     [SerializeField] private float _attackRange;
+
     public Transform CheckForTarget()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position + 2.0f * _circleRadius * transform.right, _circleRadius, transform.right, _castDistance);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position + 2.0f * _circleRadius * transform.right, 
+                                                _circleRadius, transform.right, _castDistance, _notEnemyMask);
         if (hit == true)
         {
             if (hit.transform.gameObject.layer == Mathf.Log(_playerMask, 2))
@@ -66,18 +70,23 @@ public class PursuitState : State
                         Set(_chaseState, false);
                     else if(distanceToTarget <= _attackRange && distanceToTarget > 0.3f)
                         Set(_rangedAttack, true);
-                    //else if(distanceToTarget <= 0.2f)
+                    else if(distanceToTarget <= 0.2f)
+                        Set(_slashAttack, true);
                     break;
                 case IdleState:
                     if (distanceToTarget <= _attackRange && distanceToTarget > 0.3f)
                         Set(_rangedAttack, true);
+                    else if (distanceToTarget <= 0.2f)
+                        Set(_slashAttack, true);
+                    else if (_chaseState.CheckForObstacle() == false)
+                        Set(_chaseState, true);
                     break;
                 case SearchState: 
                     Set(_investigateState, true);
                     break;
                 case AttackState:
                     if (_stateMachine.CurrentState.IsComplete == true)
-                        Set(_investigateState, true);
+                        Set(_idleState, true);
                     break;
             }
         }

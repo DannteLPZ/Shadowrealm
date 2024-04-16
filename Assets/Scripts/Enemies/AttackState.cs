@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class AttackState : State
 {
+    [Header("Animation")]
     [SerializeField] private AnimationClip _stateAnimation;
+
+    [Header("Values")]
     [SerializeField] private Collider2D _attackCollider;
     [SerializeField] private LayerMask _layerToDamage;
     [SerializeField] private int _attackDamage;
+    [SerializeField] private float _attackDuration;
 
     public override void Enter()
     {
         _core.Rigidbody.velocity = Vector3.zero;
         _core.Animator.Play(_stateAnimation.name);
-
-    }
-
-    public override void Do()
-    {
-        if (RunningTime >= 2.0f)
-            _isComplete = true;
-    }
-    public override void FixedDo()
-    {
+        _attackCollider.enabled = true;
         ContactFilter2D filter = new()
         {
             useLayerMask = true,
@@ -34,14 +29,25 @@ public class AttackState : State
         {
             foreach (Collider2D collider in results)
             {
-                Debug.Log(collider.name);
-                collider.gameObject.TryGetComponent(out IHealth health);
-                health?.TakeDamage(_attackDamage);
+                GameObject objectHit = collider.transform.parent.gameObject;
+                ITakeDamage health = objectHit.GetComponentInChildren<ITakeDamage>();
+                health?.TakeDamage(_attackDamage, _core.transform.position);
             }
         }
+
+    }
+
+    public override void Do()
+    {
+        if (RunningTime >= 1.0f)
+            _isComplete = true;
+    }
+    public override void FixedDo()
+    {
+        
     }
     public override void Exit()
     {
-
+        _attackCollider.enabled = false;
     }
 }

@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class NavigateState : State
 {
+    [Header("Animation")]
     [SerializeField] private RunState _animationState;
-    [SerializeField] private float _moveSpeed;
 
+    [Header("Values")]
+    [SerializeField] private float _moveSpeed;
     [SerializeField] private Transform _sensor;
     [SerializeField] private float _sensorDistance;
     [SerializeField] private LayerMask _whatIsGround;
+
+    [SerializeField] private SpriteRenderer _iconRenderer;
 
     private Transform _target;
 
@@ -20,6 +24,7 @@ public class NavigateState : State
     public override void Enter()
     {
         Set(_animationState, true);
+        if(_iconRenderer != null) _iconRenderer.enabled = true;
         _foundObstacle = false;
 
         if (_target == null)
@@ -30,14 +35,12 @@ public class NavigateState : State
     {
         if (_foundObstacle == true)
             _isComplete = true;
+        if (_iconRenderer != null) _iconRenderer.flipX = _core.transform.rotation.y != 0.0f;
     }
     public override void FixedDo()
     {
-        bool wallInFront = Physics2D.Raycast(_sensor.position, _core.transform.right, _sensorDistance, _whatIsGround);
-        bool floorBelow = Physics2D.Raycast(_sensor.position, -_core.transform.up, _sensorDistance, _whatIsGround);
-
-        _foundObstacle = wallInFront || !floorBelow;
-        if(_foundObstacle == true)
+        _foundObstacle = CheckForObstacle();
+        if (_foundObstacle == true)
         {
             _core.Rigidbody.velocity = Vector2.zero;
             return;
@@ -50,9 +53,18 @@ public class NavigateState : State
             _core.Rigidbody.velocity = new(_moveSpeed * direction.x, _core.Rigidbody.velocity.y);
         }
     }
+
+    public bool CheckForObstacle()
+    {
+        bool wallInFront = Physics2D.Raycast(_sensor.position, _core.transform.right, _sensorDistance, _whatIsGround);
+        bool floorBelow = Physics2D.Raycast(_sensor.position, -_core.transform.up, _sensorDistance, _whatIsGround);
+
+        return wallInFront || !floorBelow;
+    }
+
     public override void Exit()
     {
-
+        if (_iconRenderer != null) _iconRenderer.enabled = false;
     }
 
     public void SetTarget(Transform target) => _target = target;

@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class BaseEnemyCore : Core
 {
+    [Header("States")]
     [SerializeField] private PatrolState _patrolState;
     [SerializeField] private PursuitState _pursuitState;
+    [SerializeField] private HealthState _healthState;
 
     private bool _hasToPursuit;
+
+    private void OnEnable() => _healthState.OnDamaged += SetHealthState;
+    private void OnDisable() => _healthState.OnDamaged -= SetHealthState;
+
     private void Start()
     {
         SetupInstances();
@@ -16,16 +22,20 @@ public class BaseEnemyCore : Core
 
     private void Update()
     {
-        if (_stateMachine.CurrentState.IsComplete == true)
+        switch (_stateMachine.CurrentState)
         {
-            if (_stateMachine.CurrentState == _pursuitState)
-                _stateMachine.Set(_patrolState);
-        }
-
-        if (_stateMachine.CurrentState == _patrolState)
-        {
-            if (_hasToPursuit == true)
-                _stateMachine.Set(_pursuitState, true);
+            case PatrolState:
+                if (_hasToPursuit == true)
+                    _stateMachine.Set(_pursuitState, true);
+                break;
+            case PursuitState:
+                if (_stateMachine.CurrentState.IsComplete == true)
+                    _stateMachine.Set(_patrolState);
+                break;
+            case HealthState:
+                if (_stateMachine.CurrentState.IsComplete == true)
+                    Destroy(gameObject);
+                break;
         }
         _stateMachine.CurrentState.DoBranch();
     }
@@ -35,4 +45,6 @@ public class BaseEnemyCore : Core
         _hasToPursuit = _pursuitState.CheckForTarget() != null;
         _stateMachine.CurrentState.FixedDoBranch();
     }
+
+    private void SetHealthState() => _stateMachine.Set(_healthState, true);
 }

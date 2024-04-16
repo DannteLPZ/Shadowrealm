@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMoveState : State
 {
@@ -28,18 +29,31 @@ public class PlayerMoveState : State
     [SerializeField] private AirState _airState;
     [SerializeField] private DashState _dashState;
 
+    private PlayerCore _playerCore;
+
     private float _xInput;
     private float _jumpTimer;
     private float _dashTimer;
 
     private bool _hasJumped;
+
+    private bool _canDash;
     private bool _hasDashed;
 
     public float XInput => _xInput;
 
     private void Start()
     {
+        _playerCore = (PlayerCore)_core;
+        _playerCore.PlayerInputs.Gameplay.Jump.performed += InputJump;
+        _playerCore.PlayerInputs.Gameplay.Dash.performed += InputDash;
         _stateMachine.Set(_idleState);
+    }
+
+    private void OnDisable()
+    {
+        _playerCore.PlayerInputs.Gameplay.Jump.performed -= InputJump;
+        _playerCore.PlayerInputs.Gameplay.Dash.performed -= InputDash;
     }
 
     public override void Enter()
@@ -57,6 +71,11 @@ public class PlayerMoveState : State
         _stateMachine.CurrentState.Do();
     }
 
+    public override void Exit()
+    {
+        _core.Animator.speed = 1.0f;
+    }
+    
     public override void FixedDo()
     {
         MoveWithInput();
@@ -139,12 +158,15 @@ public class PlayerMoveState : State
 
     private void CheckInput()
     {
-        _xInput = Input.GetAxis("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space) == true)
-            _hasJumped = true;
+        _xInput = _playerCore.PlayerInputs.Gameplay.Movement.ReadValue<float>();
+        _canDash = _core.GroundSensor.IsGrounded == true && _hasDashed == false && Mathf.Abs(_xInput) != 0.0f;
+    }
 
-        bool canDash = _core.GroundSensor.IsGrounded == true && _hasDashed == false && Mathf.Abs(_xInput) != 0.0f;
-        if (Input.GetKeyDown(KeyCode.LeftShift) == true && canDash)
+    private void InputJump(InputAction.CallbackContext context) => _hasJumped = true;
+
+    private void InputDash(InputAction.CallbackContext context)
+    {
+        if (_canDash == true)
             _hasDashed = true;
     }
 }

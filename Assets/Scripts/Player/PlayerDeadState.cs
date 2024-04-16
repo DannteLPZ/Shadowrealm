@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class IdleState : State
+public class PlayerDeadState : State
 {
     [Header("Animation")]
     [SerializeField] private AnimationClip _stateAnimation;
+
     public override void Enter()
     {
         _core.Animator.Play(_stateAnimation.name);
@@ -13,8 +12,7 @@ public class IdleState : State
 
     public override void Do()
     {
-        if (_core.GroundSensor.IsGrounded == false)
-            _isComplete = true;
+
     }
     public override void FixedDo()
     {

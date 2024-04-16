@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba72d84b270bd54429ceba316445ac46
+guid: 879192e0679695947920d6be1f44e75a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Death_0
+      name: Enemy_Slash_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 0
-        width: 200
-        height: 200
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a71b7271129484843aac62eca2c0b61d
-      internalID: 264168174
+      spriteID: c253994272a2d834295b6284b394c37f
+      internalID: -962370222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_1
+      name: Enemy_Slash_1
       rect:
         serializedVersion: 2
-        x: 200
+        x: 188
         y: 0
-        width: 200
-        height: 200
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7e00d6195a4f364596b23e1ccc11228
-      internalID: 25996322
+      spriteID: 7b70fb474d9e4b945aa051f858726e45
+      internalID: -536123205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_2
+      name: Enemy_Slash_2
       rect:
         serializedVersion: 2
-        x: 400
+        x: 329
         y: 0
-        width: 200
-        height: 200
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c308a484beeb11c4d8f3dfa227614264
-      internalID: -970665396
+      spriteID: 0d2a6b317654fb14d98e31de9dbb6bb5
+      internalID: -952221881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_3
+      name: Enemy_Slash_3
       rect:
         serializedVersion: 2
-        x: 600
+        x: 472
         y: 0
-        width: 200
-        height: 200
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,50 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8a93ce0c1d4769489edff96023c4f61
-      internalID: -1019193192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Death_4
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d84422442cc0da54b97e526767d3ae5b
-      internalID: 1306646162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Death_5
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 200
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65f92813be413e546bbe000ecec19796
-      internalID: -1875558089
+      spriteID: fcf09f302c3ef8d4b9430c42f4b28e47
+      internalID: 893443729
       vertices: []
       indices: 
       edges: []
@@ -265,12 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Death_0: 264168174
-      Death_1: 25996322
-      Death_2: -970665396
-      Death_3: -1019193192
-      Death_4: 1306646162
-      Death_5: -1875558089
+      Enemy_Slash_0: -962370222
+      Enemy_Slash_1: -536123205
+      Enemy_Slash_2: -952221881
+      Enemy_Slash_3: 893443729
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
