@@ -48,7 +48,7 @@ public class PlayerCore : Core
                     _stateMachine.Set(_moveState);
                 break;
             case PlayerMoveState:
-                if(_groundSensor.IsGrounded && _attackState.CheckForAttack() == true)
+                if(_groundSensor.IsGrounded && _moveState.Locked == false && _attackState.CheckForAttack() == true)
                     _stateMachine.Set(_attackState);
                 break;
         }

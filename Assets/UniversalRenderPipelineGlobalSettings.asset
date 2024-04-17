@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: UniversalRenderPipelineGlobalSettings
   m_EditorClassIdentifier: 
   k_AssetVersion: 3
-  lightLayerName0: 
-  lightLayerName1: 
+  lightLayerName0: Lightable
+  lightLayerName1: Unlightable
   lightLayerName2: 
   lightLayerName3: 
   lightLayerName4: 

@@ -37,8 +37,10 @@ public class PlayerMoveState : State
 
     private bool _canDash;
     private bool _hasDashed;
+    private bool _locked;
 
     public float XInput => _xInput;
+    public bool Locked => _locked;
 
     private void Start()
     {
@@ -83,8 +85,12 @@ public class PlayerMoveState : State
 
     private void SelectState()
     {
+        _locked = false;
         if (_hasDashed == true && _dashTimer <= _dashDuration)
+        {
+            _locked = true;
             _stateMachine.Set(_dashState);
+        }
         else if (_core.GroundSensor.IsGrounded == true)
         {
             if (_xInput == 0)

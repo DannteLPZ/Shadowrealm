@@ -5,14 +5,25 @@ public class PlayerDeadState : State
     [Header("Animation")]
     [SerializeField] private AnimationClip _stateAnimation;
 
+    [Header("Values")]
+    [SerializeField] private Collider2D _playerCollider;
+
+    private bool _hasDied;
     public override void Enter()
     {
-        _core.Animator.Play(_stateAnimation.name);
+        
     }
 
     public override void Do()
     {
-
+        if(_core.GroundSensor.IsGrounded == true && _hasDied == false)
+        {
+            _core.Animator.Play(_stateAnimation.name);
+            _core.Rigidbody.velocity = Vector3.zero;
+            _core.Rigidbody.gravityScale = 0.0f;
+            _playerCollider.enabled = false;
+            _hasDied = true;
+        }
     }
     public override void FixedDo()
     {
