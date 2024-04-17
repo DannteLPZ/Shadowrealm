@@ -126,7 +126,11 @@ public class PlayerMoveState : State
     private void Jump()
     {
         if (_core.GroundSensor.IsGrounded == true && _hasJumped == true)
+        {
             _core.Rigidbody.velocity = new Vector2(_core.Rigidbody.velocity.x, _jumpSpeed);
+            _hasJumped = false;
+            _jumpTimer = 0.0f;
+        }
     }
 
     private void MoveWithInput()
