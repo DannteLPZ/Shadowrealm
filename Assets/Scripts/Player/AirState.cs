@@ -17,7 +17,7 @@ public class AirState : State
         _core.Animator.Play(_stateAnimation.name, 0, time);
         _core.Animator.speed = 0.0f;
 
-        if (_core.GroundSensor.IsGrounded == true)
+        if (_core.GroundSensor.IsGrounded == true && _core.Rigidbody.velocity.y <= 0.0f)
             _isComplete = true;
     }
     public override void FixedDo()

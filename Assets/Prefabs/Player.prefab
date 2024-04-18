@@ -380,7 +380,7 @@ MonoBehaviour:
   _groundDecay: 0.9
   _airControlFactor: 0.2
   _dashDuration: 0.5
-  _dashCooldown: 1
+  _dashCooldown: 0.5
   _jumpSpeed: 4
   _jumpBufferTime: 0.2
   _idleState: {fileID: 9120733118635737937}
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e7c02e38ae6924796273878d1cbf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dashForce: 3
+  _dashForce: 4
   _playerRenderers:
   - {fileID: 9120733120042764143}
   - {fileID: 9120733119076344418}
@@ -559,7 +559,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -866534222, guid: d0f813613fe3c8242b2426190122c338, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -569,7 +569,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!1 &9120733119080246621
 GameObject:
@@ -903,7 +903,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 1725377174, guid: 886cc29774e06184d9b268f024d4a4c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

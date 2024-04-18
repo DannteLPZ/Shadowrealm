@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Search;
 using UnityEngine;
 
 public class PursuitState : State
@@ -15,7 +12,7 @@ public class PursuitState : State
 
     [Header("Values")]
     [SerializeField] private LayerMask _playerMask;
-    [SerializeField] private LayerMask _notEnemyMask;
+    [SerializeField] private LayerMask _blocksVisionMask;
     [SerializeField] private float _circleRadius;
     [SerializeField] private float _castDistance;
     [SerializeField] private float _attackRange;
@@ -23,7 +20,7 @@ public class PursuitState : State
     public Transform CheckForTarget()
     {
         RaycastHit2D hit = Physics2D.CircleCast(transform.position + 2.0f * _circleRadius * transform.right, 
-                                                _circleRadius, transform.right, _castDistance, _notEnemyMask);
+                                                _circleRadius, transform.right, _castDistance, _blocksVisionMask);
         if (hit == true)
         {
             if (hit.transform.gameObject.layer == Mathf.Log(_playerMask, 2))

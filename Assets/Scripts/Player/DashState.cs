@@ -44,6 +44,7 @@ public class DashState : State
     public override void Exit()
     {
         _playerCollider.enabled = true;
+        _core.Rigidbody.velocity = Vector2.zero;
         _core.Rigidbody.gravityScale = 1.0f;
         ChangeRendererAlpha(1.0f);
     }

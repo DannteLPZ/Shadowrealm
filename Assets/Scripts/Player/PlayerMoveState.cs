@@ -30,7 +30,7 @@ public class PlayerMoveState : State
     private PlayerCore _playerCore;
 
     private float _xInput;
-    private float _jumpTimer;
+    private float _jumpBufferTimer;
     private float _dashTimer;
 
     private bool _hasJumped;
@@ -64,7 +64,7 @@ public class PlayerMoveState : State
     public override void Do()
     {
         CheckInput();
-        CheckTimer(ref _jumpTimer, ref _hasJumped, _jumpTimer >= _jumpBufferTime);
+        CheckTimer(ref _jumpBufferTimer, ref _hasJumped, _jumpBufferTimer >= _jumpBufferTime);
         CheckTimer(ref _dashTimer, ref _hasDashed, _dashTimer >= _dashDuration + _dashCooldown
                                                     && _core.GroundSensor.IsGrounded == true);
         SelectState();
@@ -91,7 +91,7 @@ public class PlayerMoveState : State
             _locked = true;
             _stateMachine.Set(_dashState);
         }
-        else if (_core.GroundSensor.IsGrounded == true)
+        else if (_core.GroundSensor.IsGrounded == true && Mathf.Abs(_core.Rigidbody.velocity.y) <= 0.5f)
         {
             if (_xInput == 0)
                 _stateMachine.Set(_idleState);
@@ -125,11 +125,11 @@ public class PlayerMoveState : State
 
     private void Jump()
     {
-        if (_core.GroundSensor.IsGrounded == true && _hasJumped == true)
+        if (_core.GroundSensor.IsGrounded == true && _hasJumped == true && _stateMachine.CurrentState != _dashState)
         {
             _core.Rigidbody.velocity = new Vector2(_core.Rigidbody.velocity.x, _jumpSpeed);
             _hasJumped = false;
-            _jumpTimer = 0.0f;
+            _jumpBufferTimer = 0.0f;
         }
     }
 
@@ -159,7 +159,7 @@ public class PlayerMoveState : State
     private void CheckInput()
     {
         _xInput = _playerCore.PlayerInputs.Gameplay.Movement.ReadValue<float>();
-        _canDash = _hasDashed == false && Mathf.Abs(_xInput) != 0.0f;
+        _canDash = _hasDashed == false && Mathf.Abs(_xInput) != 0.0f && _core.StateMachine.CurrentState == this;
     }
 
     private void InputJump(InputAction.CallbackContext context) => _hasJumped = true;
