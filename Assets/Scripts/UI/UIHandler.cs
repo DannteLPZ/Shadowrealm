@@ -11,7 +11,6 @@ public class UIHandler : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject inGameUI;
     public GameObject pauseMenu;
-    public GameObject pauseMenuBox;
 
     public bool gameStarted = false;
 
@@ -37,7 +36,7 @@ public class UIHandler : MonoBehaviour
         } 
         else if(gameStarted == true) 
         {
-            pauseMenuBox.SetActive(false);
+            pauseMenu.SetActive(false);
             optionsMenu.SetActive(true);
         }
         
@@ -53,11 +52,36 @@ public class UIHandler : MonoBehaviour
         }
         else if(gameStarted == true) 
         {
-            pauseMenuBox.SetActive(true);
+            pauseMenu.SetActive(true);
             optionsMenu.SetActive(false);
         }
         
     }
+
+     // ------------- UI EN EL JUEGO ---------------
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0; // Se pausa el tiempo de ejecución en el juego
+        pauseMenu.SetActive(true); // Se muestra el menú de pausa
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1; // Se resume el tiempo de ejecución del juego
+        pauseMenu.SetActive(false); // Se oculta el menú de pausa
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Nivel");
+    }
+
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("Main Menu"); // Cargar la escena de menú principal
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +91,9 @@ public class UIHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape) && gameStarted)
+        {
+            PauseGame();
+        }
     }
 }
