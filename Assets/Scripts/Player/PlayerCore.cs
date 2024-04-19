@@ -22,7 +22,12 @@ public class PlayerCore : Core
         _stateMachine.Set(_moveState);
     }
 
-    private void OnEnable() => _healthState.OnDamaged += SetHealthState;
+    private void OnEnable()
+    {
+        _playerInputs.Gameplay.Enable();
+        _healthState.OnDamaged += SetHealthState;
+    }
+
     private void OnDisable()
     {
         _healthState.OnDamaged -= SetHealthState;

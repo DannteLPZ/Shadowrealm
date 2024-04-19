@@ -25,7 +25,13 @@ public class PlayerAttackState : State
         _playerCore = (PlayerCore)_core;
         _playerCore.PlayerInputs.Gameplay.Attack.performed += InputAttack;
     }
-
+    private void OnEnable()
+    {
+        if(_playerCore != null)
+        {
+            _playerCore.PlayerInputs.Gameplay.Attack.performed += InputAttack;
+        }
+    }
     private void OnDisable()
     {
         _playerCore.PlayerInputs.Gameplay.Attack.performed -= InputAttack;

@@ -50,6 +50,15 @@ public class PlayerMoveState : State
         _stateMachine.Set(_idleState);
     }
 
+    private void OnEnable()
+    {
+        if(_playerCore != null && _playerCore.PlayerInputs != null)
+        {
+            _playerCore.PlayerInputs.Gameplay.Jump.performed += InputJump;
+            _playerCore.PlayerInputs.Gameplay.Dash.performed += InputDash;
+        }
+    }
+
     private void OnDisable()
     {
         _playerCore.PlayerInputs.Gameplay.Jump.performed -= InputJump;
