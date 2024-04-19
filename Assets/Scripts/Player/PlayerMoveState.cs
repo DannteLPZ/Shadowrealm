@@ -72,6 +72,7 @@ public class PlayerMoveState : State
 
     public override void Do()
     {
+        if (PauseManager.GameIsPaused == true) return;
         CheckInput();
         CheckTimer(ref _jumpBufferTimer, ref _hasJumped, _jumpBufferTimer >= _jumpBufferTime);
         CheckTimer(ref _dashTimer, ref _hasDashed, _dashTimer >= _dashDuration + _dashCooldown

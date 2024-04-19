@@ -24,4 +24,5 @@ public abstract class GameEvent<T> : ScriptableObject
         foreach (GameEventListener<T> listener in _listeners)
             listener.Rise(value ?? _testValue);
     }
+
 }

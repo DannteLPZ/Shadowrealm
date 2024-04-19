@@ -77,6 +77,7 @@ public class PlayerAttackState : State
 
     private void InputAttack(InputAction.CallbackContext context)
     {
+        if (PauseManager.GameIsPaused == true) return;
         _canAttack = true;
         StartAttackBuffer();
     }

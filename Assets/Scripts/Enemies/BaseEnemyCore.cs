@@ -22,6 +22,7 @@ public class BaseEnemyCore : Core
 
     private void Update()
     {
+        if (PauseManager.GameIsPaused == true) return;
         switch (_stateMachine.CurrentState)
         {
             case PatrolState:

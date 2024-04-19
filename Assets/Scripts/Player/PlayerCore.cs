@@ -36,6 +36,7 @@ public class PlayerCore : Core
 
     private void Update()
     {
+        if(PauseManager.GameIsPaused == true) return;
         SelectState();
         _stateMachine.CurrentState.DoBranch();
     }
