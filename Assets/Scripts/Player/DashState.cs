@@ -23,7 +23,7 @@ public class DashState : State
         RaycastHit2D hit = Physics2D.Raycast(_core.transform.position, direction * Vector2.right,
                                                 _dashDistance, _whatIsOutOfBounds);
         if(hit == true)
-            _core.transform.position = hit.point - 0.5f * direction * Vector2.right;
+            _core.transform.position = hit.point - 0.3f * direction * Vector2.right;
         else
             _core.transform.position += (Vector3)(_dashDistance * direction * Vector2.right);
     }

@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 5529874523487515204}
   - component: {fileID: 5529874523487515205}
   m_Layer: 8
-  m_Name: Enemy Visual
+  m_Name: Enemy Actor Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
