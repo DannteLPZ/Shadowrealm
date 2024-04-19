@@ -6,10 +6,11 @@ public class DashState : State
 {
     [Header("Values")]
     [Min(1.0f)]
-    [SerializeField] private float _dashForce;
+    [SerializeField] private float _dashDistance;
     [SerializeField] private List<SpriteRenderer> _playerRenderers;
     [SerializeField] private Collider2D _playerCollider;
     [SerializeField] private GameObject _dashParticles;
+    [SerializeField] private LayerMask _whatIsOutOfBounds;
 
     public override void Enter()
     {
@@ -19,7 +20,12 @@ public class DashState : State
         ChangeRendererAlpha(0.0f);
         Instantiate(_dashParticles, _core.transform.position, Quaternion.identity, null);
         float direction = _core.transform.rotation.y == 0.0f ? 1.0f : -1.0f;
-        _core.Rigidbody.AddForce(_dashForce * direction * Vector2.right, ForceMode2D.Impulse);
+        RaycastHit2D hit = Physics2D.Raycast(_core.transform.position, direction * Vector2.right,
+                                                _dashDistance, _whatIsOutOfBounds);
+        if(hit == true)
+            _core.transform.position = hit.point - 0.5f * direction * Vector2.right;
+        else
+            _core.transform.position += (Vector3)(_dashDistance * direction * Vector2.right);
     }
 
     private void ChangeRendererAlpha(float alpha)
@@ -34,8 +40,7 @@ public class DashState : State
 
     public override void Do()
     {
-        if (_core.GroundSensor.IsGrounded == false)
-            _isComplete = true;
+    
     }
     public override void FixedDo()
     {

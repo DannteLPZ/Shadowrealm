@@ -481,12 +481,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e7c02e38ae6924796273878d1cbf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dashForce: 4
+  _dashDistance: 2
   _playerRenderers:
   - {fileID: 9120733120042764143}
   - {fileID: 9120733119076344418}
   _playerCollider: {fileID: 9120733119550052031}
   _dashParticles: {fileID: 2177208393420803117, guid: 7859c04866cb28f49a2a6ba60d350148, type: 3}
+  _whatIsOutOfBounds:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &9120733119076344428
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +568,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

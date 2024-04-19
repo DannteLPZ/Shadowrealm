@@ -15,6 +15,8 @@ public class PlayerCore : Core
         //Initializes input asset
         _playerInputs = new();
         _playerInputs.Gameplay.Enable();
+
+
         //Assign this core to all children states
         SetupInstances();
         _stateMachine.Set(_moveState);
