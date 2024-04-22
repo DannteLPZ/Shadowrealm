@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Grass
-  - Land
   - Rock
+  - Dirt
   layers:
   - Default
   - TransparentFX

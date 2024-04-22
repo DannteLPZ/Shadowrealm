@@ -50,12 +50,48 @@ MonoBehaviour:
   sounds:
   - name: M_MainMenu
     clip: {fileID: 8300000, guid: b93dbe5025594b943ac84825d6b5fba9, type: 3}
-    volume: 0.4
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: SFX_ButtonClick
     clip: {fileID: 8300000, guid: b175a558a41ac7f48a677c0eee83d62e, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Grass
+    clip: {fileID: 8300000, guid: 0bdaeaaa6f684f44fbca3adad40d9e52, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Rock
+    clip: {fileID: 8300000, guid: ac3f4c5a379b3494b8994a5bac3fab8a, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Dirt
+    clip: {fileID: 8300000, guid: 04110811a7f34db4f8586371fe4aee8f, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Dash
+    clip: {fileID: 8300000, guid: 67a9edc8f741ce842b9d6ea9998f43af, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_PlayerSword
+    clip: {fileID: 8300000, guid: 979d48457e2708b429d3b0554fd029bb, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Burn
+    clip: {fileID: 8300000, guid: 7d1ad2c24e6667740ac1ecadf9988853, type: 3}
     volume: 0.2
     pitch: 1
     loop: 0

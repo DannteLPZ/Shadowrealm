@@ -14,6 +14,9 @@ public class PlayerHealthState : State, ITakeDamage
     [SerializeField] private PlayerHurtState _hurtState;
     [SerializeField] private PlayerDeadState _deadState;
 
+    [Header("Events")]
+    [SerializeField] private FloatEvent _playerTookDamage;
+
     public event Action OnDamaged;
 
     private bool _canTakeDamage = true;
@@ -54,7 +57,8 @@ public class PlayerHealthState : State, ITakeDamage
         _currentHealth -= damage;
         _hurtState.SetHitPosition(hitPosition);
         OnDamaged?.Invoke();
-        if(_currentHealth > 0)
+        _playerTookDamage.Invoke((float)_currentHealth / _maxHealth);
+        if (_currentHealth > 0)
             StartCoroutine(Invincibility());
     }
 

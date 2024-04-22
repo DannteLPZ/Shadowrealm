@@ -12,6 +12,9 @@ public class DashState : State
     [SerializeField] private GameObject _dashParticles;
     [SerializeField] private LayerMask _whatIsOutOfBounds;
 
+    [Header("Events")]
+    [SerializeField] private StringEvent _dashSFXEvent;
+
     public override void Enter()
     {
         _core.Rigidbody.velocity = Vector2.zero;
@@ -19,6 +22,7 @@ public class DashState : State
         _playerCollider.enabled = false;
         ChangeRendererAlpha(0.0f);
         Instantiate(_dashParticles, _core.transform.position, Quaternion.identity, null);
+        _dashSFXEvent.Invoke("SFX_Dash");
         float direction = _core.transform.rotation.y == 0.0f ? 1.0f : -1.0f;
         RaycastHit2D hit = Physics2D.Raycast(_core.transform.position, direction * Vector2.right,
                                                 _dashDistance, _whatIsOutOfBounds);

@@ -15,6 +15,9 @@ public class PlayerAttackState : State
     [SerializeField] private float _attackDuration;
     [SerializeField] private float _attackBufferTime;
 
+    [Header("Events")]
+    [SerializeField] private StringEvent _attackSFXEvent;
+
     private PlayerCore _playerCore;
 
     private float _attackTimer;
@@ -40,6 +43,7 @@ public class PlayerAttackState : State
     public override void Enter()
     {
         _core.Animator.Play(_stateAnimation.name);
+        _attackSFXEvent.Invoke("SFX_PlayerSword");
         StopAllCoroutines();
         _canAttack = false;
     }

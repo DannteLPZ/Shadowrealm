@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stateAnimation: {fileID: 7400000, guid: 0110607bdd427e94cad958c3de3c6cac, type: 2}
   _knockbackForce: 1
+  _burnSFXEvent: {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
 --- !u!1 &4292563062145211307
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +438,7 @@ MonoBehaviour:
   _invincibilityTime: 0.5
   _hurtState: {fileID: 6924384947996425454}
   _deadState: {fileID: 710357845084748546}
+  _playerTookDamage: {fileID: 11400000, guid: 1f7beab90da35e04db4fb5b872eca62b, type: 2}
 --- !u!1 &9120733118982761620
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +492,7 @@ MonoBehaviour:
   _whatIsOutOfBounds:
     serializedVersion: 2
     m_Bits: 2048
+  _dashSFXEvent: {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
 --- !u!1 &9120733119076344428
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +709,7 @@ MonoBehaviour:
   _attackDamage: 10
   _attackDuration: 0.4
   _attackBufferTime: 0.5
+  _attackSFXEvent: {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
   _canAttack: 0
 --- !u!1 &9120733119550052025
 GameObject:
@@ -766,6 +770,7 @@ GameObject:
   - component: {fileID: 9120733119734978932}
   - component: {fileID: 9120733119734978890}
   - component: {fileID: 9120733119734978933}
+  - component: {fileID: 1987605486}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -831,6 +836,27 @@ MonoBehaviour:
   _moveState: {fileID: 9120733118908617708}
   _healthState: {fileID: 9120733118935464303}
   _attackState: {fileID: 9120733119276776373}
+--- !u!95 &1987605486
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120733119734978935}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9120733120042764137
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +868,7 @@ GameObject:
   - component: {fileID: 9120733120042764142}
   - component: {fileID: 9120733120042764143}
   - component: {fileID: 9120733120042764140}
+  - component: {fileID: 868160742}
   m_Layer: 6
   m_Name: Player Visual
   m_TagString: Untagged
@@ -939,3 +966,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &868160742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120733120042764137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f493847e139b7146963233e9980d3b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundSensor: {fileID: 9120733118557577302}
+  _gameEvent: {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
