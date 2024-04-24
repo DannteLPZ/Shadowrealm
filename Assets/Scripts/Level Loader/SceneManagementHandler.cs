@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelLoader : MonoBehaviour
+public class SceneManagementHandler : MonoBehaviour
 {
     public void LoadLevel(int buildIndex)
     {
-        SceneManager.LoadScene(buildIndex);
+        SceneManagement.Instance.LoadScene(buildIndex);
     }
 }

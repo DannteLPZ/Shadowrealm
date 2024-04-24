@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerDeadState : State
 {
@@ -7,6 +8,9 @@ public class PlayerDeadState : State
 
     [Header("Values")]
     [SerializeField] private Collider2D _playerCollider;
+
+    [Header("Events")]
+    [SerializeField] private BoolEvent _gameOverEvent;
 
     private bool _hasDied;
     public override void Enter()
@@ -23,6 +27,7 @@ public class PlayerDeadState : State
             _core.Rigidbody.gravityScale = 0.0f;
             _playerCollider.enabled = false;
             _hasDied = true;
+            StartCoroutine(DeathScreenCoroutine());
         }
     }
     public override void FixedDo()
@@ -32,5 +37,11 @@ public class PlayerDeadState : State
     public override void Exit()
     {
 
+    }
+
+    private IEnumerator DeathScreenCoroutine()
+    {
+        yield return new WaitForSeconds(1.0f);
+        _gameOverEvent.Invoke(false);
     }
 }
