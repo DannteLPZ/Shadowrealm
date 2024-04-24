@@ -7,6 +7,8 @@ public class GroundSensor : MonoBehaviour
     [SerializeField] private BoxCollider2D _groundCheck;
     [SerializeField] private LayerMask _whatIsGround;
 
+    private const string EMPTY = "";
+
     private bool _isGrounded;
     public bool IsGrounded => _isGrounded;
 
@@ -21,6 +23,6 @@ public class GroundSensor : MonoBehaviour
     {
         Collider2D[] grounds = Physics2D.OverlapAreaAll(_groundCheck.bounds.min, _groundCheck.bounds.max, _whatIsGround);
         _isGrounded = grounds.Length > 0;
-        _groundType = _isGrounded ? grounds[0].tag : string.Empty;
+        _groundType = _isGrounded ? grounds[0].tag : EMPTY;
     }
 }
