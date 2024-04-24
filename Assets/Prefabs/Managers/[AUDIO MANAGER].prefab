@@ -62,7 +62,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: SFX_Grass
     clip: {fileID: 8300000, guid: 0bdaeaaa6f684f44fbca3adad40d9e52, type: 3}
-    volume: 0.1
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
