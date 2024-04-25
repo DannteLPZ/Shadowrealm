@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7989375917442950651}
   - component: {fileID: 7989375917442950644}
   - component: {fileID: 1265922244}
+  - component: {fileID: 481540779}
+  - component: {fileID: 617046285}
   m_Layer: 0
   m_Name: '[AUDIO MANAGER]'
   m_TagString: Untagged
@@ -51,6 +53,12 @@ MonoBehaviour:
   - name: M_MainMenu
     clip: {fileID: 8300000, guid: b93dbe5025594b943ac84825d6b5fba9, type: 3}
     volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: M_Woods
+    clip: {fileID: 8300000, guid: 236866c44772e56488451bfeef1c5966, type: 3}
+    volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -97,6 +105,70 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
 --- !u!114 &1265922244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989375917442950650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c2d6ccd8b04cc4a8096699c99b7c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvents:
+  - {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
+  _valueEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7989375917442950644}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _triggerEvents:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &481540779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989375917442950650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f26a1827c2e474c8521595648f18a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvents:
+  - {fileID: 11400000, guid: b9c40f241adc5124aa8354e0a6247ef6, type: 2}
+  _valueEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  _triggerEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7989375917442950644}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &617046285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

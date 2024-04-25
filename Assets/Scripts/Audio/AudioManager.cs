@@ -41,11 +41,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        Play("M_MainMenu");
-    }
-
     /// <summary>
     /// Play a sound 
     /// </summary>
@@ -67,6 +62,20 @@ public class AudioManager : MonoBehaviour
         if (s == null)
         {
             Debug.LogWarning("Sound not found: " + name);
+            return;
+        }
+        s.source.Stop();
+    }
+
+    public void StopMusic()
+    {
+        Sounds s = Array.Find(sounds, sound => sound.name.StartsWith("M_") && sound.source.isPlaying == true);
+
+        if (s == null)
+        {
+#if UNITY_EDITOR
+            Debug.LogWarning("No Music Playing");
+#endif
             return;
         }
         s.source.Stop();
