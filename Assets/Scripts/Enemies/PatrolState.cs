@@ -5,7 +5,7 @@ using UnityEngine;
 public class PatrolState : State
 {
     [SerializeField] private IdleState _idleState;
-    [SerializeField] private NavigateState _navigateState;
+    [SerializeField] private NavigateSensorState _navigateState;
 
     private void ChangeDirection()
     {

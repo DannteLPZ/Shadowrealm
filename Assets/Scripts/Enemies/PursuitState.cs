@@ -3,8 +3,8 @@ using UnityEngine;
 public class PursuitState : State
 {
     [Header("States")]
-    [SerializeField] private NavigateState _investigateState;
-    [SerializeField] private NavigateState _chaseState;
+    [SerializeField] private NavigateSensorState _investigateState;
+    [SerializeField] private NavigateSensorState _chaseState;
     [SerializeField] private SearchState _searchState;
     [SerializeField] private IdleState _idleState;
     [SerializeField] private AttackState _rangedAttack;
@@ -55,7 +55,7 @@ public class PursuitState : State
             float distanceToTarget = Vector2.Distance(_core.transform.position, _chaseState.Target.position);
             switch (_stateMachine.CurrentState)
             {
-                case NavigateState:
+                case NavigateSensorState:
                     if(_stateMachine.CurrentState.IsComplete == true && distanceToTarget > _attackRange)
                     {
                         Set(_idleState, true);
@@ -93,7 +93,7 @@ public class PursuitState : State
             {
                 case IdleState:
                     _isComplete = true;      break;
-                case NavigateState:
+                case NavigateSensorState:
                     Set(_searchState, true); break;
                 case SearchState:
                     if (_stateMachine.CurrentState.IsComplete == true)

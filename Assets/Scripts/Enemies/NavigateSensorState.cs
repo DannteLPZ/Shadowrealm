@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavigateState : State
+public class NavigateSensorState : State
 {
     [Header("Animation")]
     [SerializeField] private RunState _animationState;
