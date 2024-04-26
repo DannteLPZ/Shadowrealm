@@ -29,9 +29,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1502352698255325960}
-  - {fileID: 1502352697625441377}
-  - {fileID: 1502352699088598276}
-  - {fileID: 1502352697670406763}
   m_Father: {fileID: 1502352699075791164}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -71,12 +68,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1502352697269550950}
-  m_RootOrder: 1
+  m_Father: {fileID: 1502352698255325960}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -422.2, y: 61}
+  m_AnchoredPosition: {x: -1.1999817, y: 61}
   m_SizeDelta: {x: 504, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1502352697625441406
@@ -216,12 +213,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1502352697269550950}
-  m_RootOrder: 3
+  m_Father: {fileID: 1502352698255325960}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -422.2, y: -352.6}
+  m_AnchoredPosition: {x: -1.1999817, y: -352.6}
   m_SizeDelta: {x: 504, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1502352697670406760
@@ -335,7 +332,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1502352697625441377}
+  - {fileID: 1502352699088598276}
+  - {fileID: 1502352697670406763}
   m_Father: {fileID: 1502352697269550950}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -541,12 +541,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1502352697269550950}
-  m_RootOrder: 2
+  m_Father: {fileID: 1502352698255325960}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -422.2, y: -88.7}
+  m_AnchoredPosition: {x: -1.1999817, y: -88.7}
   m_SizeDelta: {x: 504, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1502352699088598273
@@ -631,16 +631,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1502352699075791161}
-        m_TargetAssemblyTypeName: UIAssistant, Assembly-CSharp
-        m_MethodName: HideCanvasGroup
-        m_Mode: 2
+      - m_Target: {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[System.String, mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 1502352699075791162}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SFX_ButtonClick
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1502352699075791161}
@@ -657,13 +657,13 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1502352699075791161}
         m_TargetAssemblyTypeName: UIAssistant, Assembly-CSharp
-        m_MethodName: PlayAudio
-        m_Mode: 5
+        m_MethodName: HideCanvasGroup
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1502352699075791162}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SFX_ButtonClick
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
