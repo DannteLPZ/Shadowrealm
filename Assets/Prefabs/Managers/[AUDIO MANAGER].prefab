@@ -63,7 +63,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: SFX_ButtonClick
-    clip: {fileID: 8300000, guid: b175a558a41ac7f48a677c0eee83d62e, type: 3}
+    clip: {fileID: 8300000, guid: 5c5c36e09e2769240b48f0479d569bbc, type: 3}
     volume: 0.2
     pitch: 1
     loop: 0
