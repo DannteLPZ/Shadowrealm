@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class BossAttackState : State
 {
+    [SerializeField] private FlamePillarPool _flamePillarPool;
     [SerializeField] private AnimationClip _stateAnimation;
-    [SerializeField] private GameObject _flamePillar;
     [SerializeField] private float _pillarSpacing;
 
     private int _numberOfPillars = 3;
@@ -36,8 +36,11 @@ public class BossAttackState : State
         {
             yield return new WaitForSeconds(0.5f);
             Vector3 pillarPosition = _core.transform.position + (i + 1) * _pillarSpacing * _core.transform.right;
-            Instantiate(_flamePillar, pillarPosition, Quaternion.identity);
+
+            GameObject flamePillar = _flamePillarPool.RequestFlamePillar();
+            flamePillar.transform.position = pillarPosition;
         }
+
         _isComplete = true;
     }
 
