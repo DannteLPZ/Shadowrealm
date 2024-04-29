@@ -47,9 +47,9 @@ public class BossHealthState : State, ITakeDamage, IDie
         {
             _currentHealth -= 1;
             _canTakeDamage = false;
+            OnDamaged?.Invoke();
             if (_currentHealth <= 0)
                 Die();
-            OnDamaged?.Invoke();
         }
     }
 
