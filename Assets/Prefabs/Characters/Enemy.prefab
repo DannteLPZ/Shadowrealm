@@ -474,13 +474,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2735991480935687565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43a58d5112b417c40944db7ba5af6fa2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4df2a45501c7efa4fb49aa86ec878b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animationState: {fileID: 2735991482379414894}
-  _moveSpeed: 2
+  _moveSpeed: 1
   _sensor: {fileID: 2735991481008299104}
-  _sensorDistance: 0.1
+  _sensorDistance: 0.5
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -682,17 +682,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2735991481790028337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43a58d5112b417c40944db7ba5af6fa2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4df2a45501c7efa4fb49aa86ec878b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animationState: {fileID: 2735991482499286535}
-  _moveSpeed: 0.5
+  _moveSpeed: 1
   _sensor: {fileID: 2735991481008299104}
-  _sensorDistance: 0.1
+  _sensorDistance: 0.5
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 128
-  _iconRenderer: {fileID: 0}
+  _iconRenderer: {fileID: 2735991482409640656}
 --- !u!1 &2735991481816043046
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,13 +959,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2735991481967284092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43a58d5112b417c40944db7ba5af6fa2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4df2a45501c7efa4fb49aa86ec878b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animationState: {fileID: 2735991480919264834}
-  _moveSpeed: 0.8
+  _moveSpeed: 1
   _sensor: {fileID: 2735991481008299104}
-  _sensorDistance: 0.1
+  _sensorDistance: 0.5
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -1551,12 +1551,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stateAnimation: {fileID: 7400000, guid: 7a53b532927e5f345880af73cadec2f4, type: 2}
-  _attackCollider: {fileID: 2735991481816043044}
-  _layerToDamage:
-    serializedVersion: 2
-    m_Bits: 64
-  _attackDamage: 10
-  _attackDuration: 1
 --- !u!1 &2735991482713212228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,12 +1674,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stateAnimation: {fileID: 7400000, guid: 8852c3007fafdcc49a8b61d5a3b18ef8, type: 2}
-  _attackCollider: {fileID: 2735991480804684360}
-  _layerToDamage:
-    serializedVersion: 2
-    m_Bits: 64
-  _attackDamage: 20
-  _attackDuration: 0.5
 --- !u!1 &7433441973955250739
 GameObject:
   m_ObjectHideFlags: 0
