@@ -7,11 +7,13 @@ public class BossMoveState : State
     [SerializeField] private NavigateTransformState _navigateState;
 
     [Header("Values")]
-    [SerializeField] private GameObject _fireShield;
+    [SerializeField] private GameObject _fireBall;
+    [SerializeField] private BoolEvent _activateFireShield;
 
     public override void Enter()
     {
         _stateMachine.Set(_idleState, true);
+        _activateFireShield.Invoke(true);
     }
 
     public override void Do()
@@ -22,14 +24,16 @@ public class BossMoveState : State
                 if (_stateMachine.CurrentState.RunningTime >= 1.0f)
                 {
                     _stateMachine.Set(_navigateState, true);
-                    _fireShield.SetActive(true);
+                    _activateFireShield.Invoke(false);
+                    _fireBall.SetActive(true);
                 }
                 break;
             case NavigateTransformState:
                 if (_stateMachine.CurrentState.IsComplete == true)
                 {
                     _isComplete = true;
-                    _fireShield.SetActive(false);
+                    _fireBall.SetActive(false);
+                    _activateFireShield.Invoke(true);
                 }
                 break;
         }

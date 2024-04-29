@@ -12,6 +12,9 @@ public class BossCore : Core
     [SerializeField] private BossHealthState _healthState;
     [SerializeField] private IdleState _tiredState;
 
+    [Header("Values")]
+    [SerializeField] private BoolEvent _activateFireShield;
+
     private int _attackTimes;
     private int _battlePhase;
     public int BattlePhase => _battlePhase;
@@ -43,6 +46,7 @@ public class BossCore : Core
                 {
                     if(_attackTimes >= _battlePhase * 2)
                     {
+                        _activateFireShield.Invoke(false);
                         _stateMachine.Set(_tiredState, true);
                         _healthState.CanTakeDamage(true);
                     }
