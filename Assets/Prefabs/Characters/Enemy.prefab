@@ -705,7 +705,7 @@ MonoBehaviour:
   _animationState: {fileID: 2735991482499286535}
   _moveSpeed: 1
   _sensor: {fileID: 2735991481008299104}
-  _sensorDistance: 0.5
+  _sensorDistance: 0.2
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 128
