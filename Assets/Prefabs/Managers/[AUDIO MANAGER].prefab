@@ -104,6 +104,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: SFX_Metal
+    clip: {fileID: 8300000, guid: 7996075deb3c0b645ac1096c276f29a6, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!114 &1265922244
 MonoBehaviour:
   m_ObjectHideFlags: 0
