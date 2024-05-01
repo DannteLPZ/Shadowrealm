@@ -472,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837600056248956302, guid: fc7eaff1690850848935043dad68efa0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -243.3
+      value: -225.7
       objectReference: {fileID: 0}
     - target: {fileID: 2837600057484983170, guid: fc7eaff1690850848935043dad68efa0, type: 3}
       propertyPath: m_SizeDelta.x
@@ -489,10 +489,10 @@ PrefabInstance:
     - target: {fileID: 2837600057484983181, guid: fc7eaff1690850848935043dad68efa0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e5241fd89554ee54fb3ee2e29a20b451, type: 3}
+      objectReference: {fileID: 21300000, guid: f878bfb2f6d8c8946be7845027ea9cc4, type: 3}
     - target: {fileID: 2837600058248983787, guid: fc7eaff1690850848935043dad68efa0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -79.1
+      value: -50.06
       objectReference: {fileID: 0}
     - target: {fileID: 2837600058248983787, guid: fc7eaff1690850848935043dad68efa0, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -501,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 3726803347659324099, guid: fc7eaff1690850848935043dad68efa0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7303d8a2cf921384ca952fa768da0f25, type: 3}
+      objectReference: {fileID: 21300000, guid: 31de026b14c93c3459b7f492ed8a2e6c, type: 3}
     - target: {fileID: 3726803348686153577, guid: fc7eaff1690850848935043dad68efa0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
