@@ -319,5 +319,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeTime: 25
   _fireflySpeed: 2
-  _deltaX: 2
+  _deltaX: 3
   _yValues: {x: -1, y: 1}

@@ -62,6 +62,12 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: M_Level1
+    clip: {fileID: 8300000, guid: 701ec99d7778a2b4da8c09b8a0170924, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: SFX_ButtonClick
     clip: {fileID: 8300000, guid: 5c5c36e09e2769240b48f0479d569bbc, type: 3}
     volume: 0.2
@@ -106,6 +112,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: SFX_Metal
     clip: {fileID: 8300000, guid: 7996075deb3c0b645ac1096c276f29a6, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Fall
+    clip: {fileID: 8300000, guid: b533db86f4ef0324fa941d557262e7cf, type: 3}
     volume: 0.2
     pitch: 1
     loop: 0

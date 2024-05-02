@@ -102,6 +102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 793032683138527879}
     m_Modifications:
+    - target: {fileID: 1136809654121970375, guid: 3200bbe94d6f64c42bb078ecd355700e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1554952554709565187, guid: 3200bbe94d6f64c42bb078ecd355700e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -216,6 +220,18 @@ PrefabInstance:
     - target: {fileID: 3699979927781499277, guid: 93c64fb4e7ed16f4a9a8c0d6a1fb22cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
+      objectReference: {fileID: 11400000, guid: 7857f2b91fe989c4392271cdd2dc4a2e, type: 2}
+    - target: {fileID: 3699979927781499277, guid: 93c64fb4e7ed16f4a9a8c0d6a1fb22cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Invoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699979927781499277, guid: 93c64fb4e7ed16f4a9a8c0d6a1fb22cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameEvent`1[[System.Int32, mscorlib
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699979927781499277, guid: 93c64fb4e7ed16f4a9a8c0d6a1fb22cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3856350653636017320, guid: 93c64fb4e7ed16f4a9a8c0d6a1fb22cd, type: 3}
       propertyPath: m_Pivot.x
@@ -304,6 +320,14 @@ PrefabInstance:
     - target: {fileID: 9110280990267652493, guid: 93c64fb4e7ed16f4a9a8c0d6a1fb22cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
+      objectReference: {fileID: 11400000, guid: 7857f2b91fe989c4392271cdd2dc4a2e, type: 2}
+    - target: {fileID: 9110280990267652493, guid: 93c64fb4e7ed16f4a9a8c0d6a1fb22cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Invoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 9110280990267652493, guid: 93c64fb4e7ed16f4a9a8c0d6a1fb22cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameEvent`1[[System.Int32, mscorlib
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c64fb4e7ed16f4a9a8c0d6a1fb22cd, type: 3}

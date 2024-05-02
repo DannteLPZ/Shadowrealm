@@ -11,6 +11,7 @@ public class PlayerDeadState : State
 
     [Header("Events")]
     [SerializeField] private BoolEvent _gameOverEvent;
+    [SerializeField] private StringEvent _gameOverSFXEvent;
 
     private bool _hasDied;
     public override void Enter()
@@ -41,6 +42,7 @@ public class PlayerDeadState : State
 
     private IEnumerator DeathScreenCoroutine()
     {
+        _gameOverSFXEvent.Invoke("SFX_GameOver");
         yield return new WaitForSeconds(1.0f);
         _gameOverEvent.Invoke(false);
     }

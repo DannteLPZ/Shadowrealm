@@ -94,6 +94,7 @@ MonoBehaviour:
   _stateAnimation: {fileID: 7400000, guid: fc8c391a91e4f47438b53666622109b1, type: 2}
   _playerCollider: {fileID: 9120733119550052031}
   _gameOverEvent: {fileID: 11400000, guid: 7a722b1a7d8b51f4d8410de8a3ae0261, type: 2}
+  _gameOverSFXEvent: {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
 --- !u!1 &7663535103740139837
 GameObject:
   m_ObjectHideFlags: 0
