@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationState: {fileID: 2735991482379414894}
-  _moveSpeed: 1
+  _moveSpeed: 2
   _sensor: {fileID: 2735991481008299104}
   _sensorDistance: 0.5
   _whatIsGround:
