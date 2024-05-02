@@ -68,6 +68,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: M_Level2
+    clip: {fileID: 8300000, guid: 300ede3803bc2d340be17ce45778db69, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   - name: SFX_ButtonClick
     clip: {fileID: 8300000, guid: 5c5c36e09e2769240b48f0479d569bbc, type: 3}
     volume: 0.2
