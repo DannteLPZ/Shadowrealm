@@ -63,14 +63,20 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: M_Level1
-    clip: {fileID: 8300000, guid: 701ec99d7778a2b4da8c09b8a0170924, type: 3}
+    clip: {fileID: 8300000, guid: 0abfb6ee6d8e03342870834a40204643, type: 3}
     volume: 0.2
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: M_Level2
     clip: {fileID: 8300000, guid: 300ede3803bc2d340be17ce45778db69, type: 3}
     volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: M_LevelBoss
+    clip: {fileID: 8300000, guid: 64b009b1566eff540bf5ce1953a47184, type: 3}
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -122,8 +128,20 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: SFX_GameOver
+    clip: {fileID: 8300000, guid: 6f55031a7dfb09c4293afbac7649cab6, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: SFX_Fall
     clip: {fileID: 8300000, guid: b533db86f4ef0324fa941d557262e7cf, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_FlamePillar
+    clip: {fileID: 8300000, guid: 1b8ac459f6eb5e94795b714aa6fcdb78, type: 3}
     volume: 0.2
     pitch: 1
     loop: 0
