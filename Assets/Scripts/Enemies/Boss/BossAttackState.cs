@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class BossAttackState : State
 {
+    [SerializeField] private StringEvent _flamePillarSFXEvent;
     [SerializeField] private FlamePillarPool _flamePillarPool;
     [SerializeField] private AnimationClip _stateAnimation;
     [SerializeField] private float _pillarSpacing;
@@ -34,9 +35,10 @@ public class BossAttackState : State
     {
         for (int i = 0; i < _numberOfPillars; i++)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.7f);
             Vector3 pillarPosition = _core.transform.position + (i + 1) * _pillarSpacing * _core.transform.right;
 
+            _flamePillarSFXEvent.Invoke("SFX_FlamePillar");
             GameObject flamePillar = _flamePillarPool.RequestFlamePillar();
             flamePillar.transform.position = pillarPosition;
         }
