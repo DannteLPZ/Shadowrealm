@@ -7,6 +7,10 @@ public class BossHealthState : State, ITakeDamage, IDie
     [SerializeField] private IdleState _hurtState;
     [SerializeField] private IdleState _deadState;
 
+    [SerializeField] private FloatEvent _healthEvent;
+    [SerializeField] private StringEvent _bossHurtSFXEvent;
+    [SerializeField] private BoolEvent _gameOverEvent;
+
     [SerializeField] private int _maxHealth;
     private int _currentHealth;
 
@@ -48,15 +52,23 @@ public class BossHealthState : State, ITakeDamage, IDie
             _currentHealth -= 1;
             _canTakeDamage = false;
             OnDamaged?.Invoke();
+
+            _healthEvent.Invoke((float)_currentHealth/_maxHealth);
+            
+
             if (_currentHealth <= 0)
                 Die();
+            else { _bossHurtSFXEvent.Invoke("SFX_BossHurt"); }
+                
         }
     }
 
     public void Die()
     {
-       _core.Rigidbody.velocity = Vector2.zero;
+        _core.Rigidbody.velocity = Vector2.zero;
         _canTakeDamage = false;
+        _bossHurtSFXEvent.Invoke("SFX_EnemyDie");
+        _gameOverEvent.Invoke(true);
     }
 
     public bool CanTakeDamage(bool canTakeDamage) => _canTakeDamage = canTakeDamage;

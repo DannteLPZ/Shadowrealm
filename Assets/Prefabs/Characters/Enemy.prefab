@@ -902,6 +902,7 @@ MonoBehaviour:
   _stateAnimation: {fileID: 7400000, guid: 3fd3c2f0f55de5f40a68260adcfe39a6, type: 2}
   _corpseDuration: 2
   _enemyCollider: {fileID: 2735991480823313695}
+  _enemyDieSFXEvent: {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
 --- !u!1 &2735991481912910761
 GameObject:
   m_ObjectHideFlags: 0
