@@ -12,6 +12,9 @@ public class HealthState : State, ITakeDamage, IDie
     [Header("Values")]
     [SerializeField] private Collider2D _enemyCollider;
 
+    [Header("Events")]
+    [SerializeField] private StringEvent _enemyDieSFXEvent;
+
     public event Action OnDamaged;
     public override void Enter()
     {
@@ -39,5 +42,6 @@ public class HealthState : State, ITakeDamage, IDie
         _enemyCollider.enabled = false;
         _core.Rigidbody.velocity = Vector3.zero;
         _core.Rigidbody.gravityScale = 0.0f;
+        _enemyDieSFXEvent.Invoke("SFX_EnemyDie");
     }
 }
