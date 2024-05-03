@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6817068761164884606}
   - component: {fileID: 6817068761164884604}
   - component: {fileID: 6817068761164884605}
+  - component: {fileID: 6817068759526435854}
   m_Layer: 0
   m_Name: '[SCENE MANAGER]'
   m_TagString: Untagged
@@ -78,3 +79,35 @@ MonoBehaviour:
   _triggerEvents:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6817068759526435854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6817068761164884607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f26a1827c2e474c8521595648f18a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvents:
+  - {fileID: 11400000, guid: 81e101539aba5794b9cf6ba6312a6039, type: 2}
+  _valueEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  _triggerEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6817068761164884604}
+        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
+        m_MethodName: LoadNextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

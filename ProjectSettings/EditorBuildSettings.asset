@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Scenes/Main Menu.unity
     guid: 6d7c1a0d76936a64c87b101d60c521e6
   - enabled: 1
+    path: Assets/Scenes/Main Scenes/Lore Scene.unity
+    guid: 455bbedeb1dc2154190b783806ee17bb
+  - enabled: 1
     path: Assets/Scenes/Main Scenes/IntroLevel.unity
     guid: 72a4d492ea882ca4bad0055f81bba9f5
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Level 1.unity
+    guid: c925fcb4e4bb62844aec272a3d1385fa
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Level 2.unity
+    guid: 2269c9bdb67ea29459a74497d7327200
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Boss Level.unity
+    guid: ec2354069dfe0df4e87c6397eb5f50a7
   m_configObjects: {}
