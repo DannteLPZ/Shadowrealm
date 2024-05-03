@@ -1586,6 +1586,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stateAnimation: {fileID: 7400000, guid: 7a53b532927e5f345880af73cadec2f4, type: 2}
+  _attackSFXEvent: {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
+  _attackSFXName: SFX_FlamePillar
 --- !u!1 &2735991482713212228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,6 +1667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stateAnimation: {fileID: 7400000, guid: 8852c3007fafdcc49a8b61d5a3b18ef8, type: 2}
+  _attackSFXEvent: {fileID: 11400000, guid: efa180a164f49414988fc4675caeaa81, type: 2}
+  _attackSFXName: SFX_EnemySword
 --- !u!1 &7433441973955250739
 GameObject:
   m_ObjectHideFlags: 0

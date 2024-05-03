@@ -158,6 +158,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: SFX_EnemySword
+    clip: {fileID: 8300000, guid: f395f9b334e1dd24384c7ab298e3226f, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!114 &1265922244
 MonoBehaviour:
   m_ObjectHideFlags: 0
